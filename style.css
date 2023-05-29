@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1;}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.slider .slick-dots {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+.slider .slick-dots li button{
+    background-color: black;
+    color: transparent;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 5px;
+  }
+  
+.slider .slick-dots .slick-active button {
+    background-color: #F74A50;
+    color: transparent;
+  }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+}
+
+main {
+    padding-top: max(60px, 8vw);
+}
+
+.container {
+    max-width: max(600px, 65%);
+    margin: 0 auto;
+    padding: max(30px, 3vw) max(20px, 2vw);
+}
+
+header {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+header ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header ul li {
+    margin: max(10px, 1vw);
+    color: white;
+    font-size: max(15px, 1vw);
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header .menu-button {
+    color: white;
+    display: none;
+    justify-content: flex-end;
+}
+
+header .menu-button i {
+    font-size: max(25px, 2vw);
+}
+
+.event .event-bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 75vh;
+}
+
+.event .counter-box {
+    position: relative;
+    top: -6vh;
+    background-color: black;
+    color: white;
+    max-width: max(600px, 60%);
+    border-radius: max(15px, 1vw);
+    padding: max(15px, 3vw);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.event .counter-box h3, .event .counter-box span {
+    font-size: max(25px, 3.3vw);
+    font-weight: bold;
+}
+
+.event .counter-box p {
+    font-size: max(15px, 1.2vw);
+    margin-top: max(10px, 1vw);
+    margin-left: max(3px, .5vw);
+}
+
+.counter-box .counter {
+    display: flex;
+}
+
+.counter .counter-field {
+    margin-right: max(5px, .3vw);
+}
+
+.event-details h2 {
+    text-transform: uppercase;
+    font-size: max(25px, 2.5vw);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: max(20px, 2vw);
+}
+
+.event-details .logos {
+    margin: max(20px, 4vw) 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.event-details .logos img {
+    min-width: 7vw;
+}
+
+.event-box {
+    margin-bottom: max(20px, 2vw);
+}
+
+.event-box .event-day {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: max(10px, 1vw) max(20px, 2vw);
+   border-radius: max(10px, 1vw);
+   background-color: #DFDFDF; 
+   cursor: pointer;
+}
+
+.event-box .event-day p {
+    font-size: max(16px, 1.2vw);
+    font-weight: bold;
+}
+
+.event-box .event-day i {
+    font-size: max(14px, 1vw);
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    height: max(20px, 2vw);
+    width: max(20px, 2vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-box .event-content {
+    background-color: #f9f9f9;
+    padding: max(20px, 2vw);
+    display: none;
+}
+
+.event-box .event-info {
+    margin: max(20px, 2vw) 0;
+}
+
+.event-box .event-content h5 {
+    font-weight: bold;
+    font-size: max(17px, 1.4vw);
+    margin-bottom: max(10px, .5vw);
+}
+
+.event-box .event-content li {
+    font-size: max(15px, 1.2vw);
+    margin-bottom: max(10px, .5vw);
+    font-weight: 500;
+}
+
+.bg-title {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: max(20px, 2vw);
+    background-size: 100% 100%;
+    text-align: center;
+}
+
+.bg-title h2 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: max(30px, 3vw);
+    margin-bottom: max(10px, .5vw);
+}
+
+.bg-title p {
+    color: #F74A50;
+    font-size: max(16px, 1.8vw);
+}
+
+.about-hotel {
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.about-hotel .slider {
+    width: 90%;
+    margin-left: auto;
+}
+
+.slider .img-wrapper {
+    padding-left: max(10px, 1vw);
+}
+
+.slider .img-wrapper img {
+    width: 100%;
+}
+
+.about-hotel .extra-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: max(15px, 1.8vw) 0 max(20px, 3vw) 0;
+}
+
+.about-hotel .extra-info a {
+    font-size: max(15px, 1vw);
+    display: inline-block;
+    margin: max(10px, .5vw);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: #F74A50;
+    padding: max(10px, .6vw);
+    border-radius: max(10px, .6vw);
+}
+
+
+.experiences-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: max(20px, 2vw);
+}
+
+.experiences-wrapper .experience-box {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: max(10px, .5vw) 0;
+    width: 49%;
+    height: max(18vw, 200px);
+}
+
+.experience-box .experience-content {
+    opacity: 0;
+    background-color: hsla(358, 92%, 63%, 0.7);
+    padding: max(10px, 1vw);
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: .5s;
+}
+
+.experience-box .experience-content::-webkit-scrollbar {
+    background-color: black;
+    width: max(5px, .3vw);
+}
+
+.experience-box .experience-content::-webkit-scrollbar-thumb {
+    background-color: #F74A50;
+}
+
+.experience-box .experience-content:hover {
+    opacity: 1;
+}
+
+.experience-box .experience-content h5 {
+    color: white;
+    font-weight: bold;
+    font-size: max(25px, 2.5vw);
+}
+
+.experience-box .experience-content p {
+    font-size: max(15px, 1vw);
+    color: white;
+    margin: max(10px, .5vw);
+}
+
+.city-experience .experiences-alert p{
+    font-size: max(18px, 1.2vw);
+    line-height: 1.4;
+    color: #F74A50;
+    font-weight: bold;
+    text-align: center;
+    margin: max(20px, 2vw);
+}
+
+.tips {
+    background-color: black;
+    padding: max(20px, 4vw) 0;
+    position: relative;
+}
+
+.vector {
+    position: absolute;
+    width: 100%;
+    max-width: 15vw;
+}
+
+.vec1 {
+    left: 0;
+    top: 25%;
+}
+
+.vec2 {
+    right: 0;
+    top: 15%;
+}
+
+.vec3 {
+    top: 45%;
+    right: 0;
+}
+
+.vec4 {
+    top: 60%;
+    left: 0;
+}
+
+.tips .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tips .title h2{
+    color: white;
+    font-size: max(30px, 3vw);
+}
+
+.tips .title span {
+    color: #F74A50;
+    font-size: max(34px, 3.6vw);
+}
+
+.tip-list h3 {
+    font-size: max(50px, 4.2vw);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: max(15px, 1.5vw);
+    border-radius: max(15px, 1.5vw);
+    text-align: center;
+    margin: max(20px, 2vw) 0;
+}
+
+.donts h3 {
+    color: white;
+    background-color: #F74A50;
+}
+
+.donts li {
+    color: #F74A50;
+}
+
+.do h3 {
+    color: #F74A50;
+    background-color: white;
+}
+
+.do li {
+    color: white;
+}
+
+.tip-list .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: max(20px, 2vw) 0;
+}
+
+.tip-list ul {
+    list-style: disc;
+    list-style-position: inside;
+    width: 40%;
+}
+
+.tip-list ul li {
+    font-size: max(16px, 1.4vw);
+    margin: max(10px, 2vw) 0;
+    font-weight: 500;
+}
+
+.recomendations {
+    text-align: center;
+    color: white;
+}
+
+.recomendations h2 {
+    font-size: max(30px, 5vw);
+    font-weight: bold;
+    margin-bottom: max(20px, 2vw);
+}
+
+.recomendations ul {
+    margin: max(20px, 3vw) 0;
+}
+
+.recomendations ul li {
+    margin-bottom: max(20px, 4vw);
+    font-size: max(18px, 1.3vw);
+}
+
+.recomendations ul li span {
+    color: #F74A50;
+    font-weight: bold;
+}
+
+.recomendations ul li p {
+    margin: max(10px, 1vw) 0;
+}
+
+.weather-forecast {
+    color: white;
+    text-align: center;
+}
+
+.weather-forecast h4 {
+    font-size: max(40px, 3vw);
+    font-weight: bold;
+    margin-bottom: max(20px, 2vw)
+}
+
+.weather-forecast .images {
+    margin: max(20px, 2vw);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.weather-forecast .img-wrapper {
+    width: 24%;
+}
+
+.weather-forecast .img-wrapper img {
+    width: 100%;
+}
+
+.weather-forecast p {
+    font-size: max(15px, 1vw);
+}
+
+.weather-forecast span, .weather-forecast a {
+    color: #F74A50;
+    text-decoration: none;
+}
+
+footer {
+    color: white;
+    background-color: #F74A50;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.footer-left {
+    margin-bottom: 20px;
+}
+
+.footer-left img {
+    width: 100%;
+    min-width: 25vw;
+    margin-bottom: max(20px, 2vw);
+}
+
+.footer-left p {
+    font-size: max(28px, 2.3vw);
+    font-weight: bold;
+    margin-bottom: max(10px, 1vw);
+}
+
+.footer-left span {
+    font-size: max(28px, 2.3vw);
+    font-weight: 300;
+}
+
+.footer-right h5 {
+    font-size: max(22px, 1.7vw);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-right .contact-box {
+    margin: max(20px, 2vw) 0;
+}
+
+.footer-right .contact-box span, .footer-right .contact-box p {
+    font-size: max(18px, 1.2vw);
+}
+
+.footer-right .contact-box span {
+    font-weight: bold;
+}
+
+.footer-right .contact-box p {
+    margin: max(10px, 1vw) 0;
+}
+
+@media screen and (max-width: 768px){
+    header .menu-button {
+        display: flex;
+    }
+
+    header nav {
+        padding: max(10px, 1vw);
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: black;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event .counter-box {
+        flex-direction: column;
+    }
+
+    .counter-box .counter {
+        margin-top: 20px;
+    }
+
+    .event .counter-box p {
+        margin-left: 0;
+    }
+
+    .about-hotel .slider {
+        margin: 0 auto;
+    }
+
+    .bg-title {
+        background-size: 140% 100%;
+        border-radius: 10px;
+    }
+
+    .slider .img-wrapper {
+        padding: 0;
+    }
+
+    .about-hotel {
+        background-size: initial;
+    }
+
+    .experiences-wrapper .experience-box {
+        width: 100%;
+    }
+
+    .tips .vector {
+        display: none;
+    }
+
+    .tip-list ul {
+        width: 100%;
+    }
+
+    .weather-forecast .img-wrapper {
+        width: 49%;
+    }
+
+    .footer-left, .footer-right {
+        width: 100%;
+    }
+}
